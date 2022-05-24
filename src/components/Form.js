@@ -9,12 +9,16 @@ export default class Form extends React.Component {
   render() {
     return (
       <div className="form">
-        <Header formName={this.props.input.name}/>
-        {this.props.input.inputText.map(input => <FormInput
+        <Header
+          formName={this.props.input.name}
+        />
+        {this.props.input.inputText.map((input, idx) => <FormInput
+        key={idx}
         fieldName={input[0]} 
         placeholder={input[1]}
         />)}
-        {this.props.input.textArea.map(input => <FormTextArea
+        {this.props.input.textArea.map((input, idx) => <FormTextArea
+        key={idx}
         fieldName={input[0]} 
         placeholder={input[1]} 
         numRows={input[2]}/>)}
