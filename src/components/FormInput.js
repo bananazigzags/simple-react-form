@@ -4,7 +4,7 @@ import './FormInput.css'
 export default class FormInput extends React.Component {
   render() {
     return (
-      <div class="form-input">
+      <div className="form-input">
         <label 
           htmlFor={this.props.fieldName} className="field-label">
           {this.props.fieldName}

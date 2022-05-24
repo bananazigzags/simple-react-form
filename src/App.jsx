@@ -5,7 +5,7 @@ import { formData } from './formData';
 
 function App() {
   return (
-    <div className="form">
+    <div>
       <Form input={formData}/>      
     </div>
   );

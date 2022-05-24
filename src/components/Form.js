@@ -3,6 +3,7 @@ import FormInput from './FormInput'
 import Header from "./Header"
 import "./Form.css"
 import FormTextArea from './FormTextArea';
+import Button from './Button';
 
 export default class Form extends React.Component {
   render() {
@@ -17,6 +18,16 @@ export default class Form extends React.Component {
         fieldName={input[0]} 
         placeholder={input[1]} 
         numRows={input[2]}/>)}
+        <div className="controls-block">
+          <Button 
+          buttonName="ОТМЕНА"
+          onClick={() => alert('BYE')}
+          />
+          <Button 
+          buttonName="СОХРАНИТЬ"
+          onClick={() => alert('SUCCESS')}
+          />
+        </div>
       </div>
     )
   }
