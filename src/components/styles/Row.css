@@ -1,0 +1,11 @@
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin: 10px;
+}
+
+.fieldContent {
+  word-wrap: break-word;
+  word-break: break-all;
+}

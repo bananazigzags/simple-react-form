@@ -1,20 +1,28 @@
 import React from 'react';
-import './FormInput.css'
+import './styles/FormInput.css'
 
 export default class FormInput extends React.Component {
   render() {
     return (
       <div className="form-input">
         <label 
-          htmlFor={this.props.fieldName} className="field-label">
-          {this.props.fieldName}
+          htmlFor={this.props.field} 
+          className="field-label"
+        >
+          {this.props.fieldLabel}
         </label>
         <input 
           type="text"
-          name={this.props.fieldName}
+          name={this.props.field}
+          id={this.props.field}
           placeholder={this.props.placeholder}
-          className="input-field">
+          onChange={this.props.handleChange}
+          validator={this.props.validator}
+          className="input-field"
+          ref={this.props.phoneRef}
+        >
         </input>
+        {this.props.isValidateFail && <p>{this.props.validateError}</p>}
       </div>
     )
   }
