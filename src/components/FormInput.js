@@ -14,10 +14,9 @@ export default class FormInput extends React.Component {
         <input 
           type="text"
           name={this.props.field}
-          id={this.props.field}
+          value={this.props.value}
           placeholder={this.props.placeholder}
           onChange={this.props.handleChange}
-          validator={this.props.validator}
           className="input-field"
           ref={this.props.phoneRef}
         >

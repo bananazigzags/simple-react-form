@@ -15,7 +15,8 @@ export default class FormTextArea extends React.Component {
           name={this.props.field} 
           id={this.props.fielde}
           placeholder={this.props.placeholder}
-          onChange={this.props.handleChange}className="input-field"
+          onChange={this.props.handleChange}
+          className="input-field"
         >
         </textarea>
       </div>

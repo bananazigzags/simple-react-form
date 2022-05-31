@@ -68,6 +68,23 @@ export default class Form extends React.Component {
     }
   }
 
+  clearForm = (e) => {
+    e.preventDefault();
+    this.setState({
+      isSubmitted: false,
+      isReady: false,
+      fields: {
+        name: "",
+        lastName: "",
+        dateOfBirth: "",
+        phone: "",
+        website: "",
+        desc: "",
+        techStack: "",
+        projectDesc: "",
+      }
+    })
+  }
 
   render() {
     const {fields, isReady} = this.state;
@@ -79,6 +96,7 @@ export default class Form extends React.Component {
           formName="Создание анкеты"
         />
         <FormInput 
+        value={fields.name}
         field="name"
         fieldLabel="Имя"
         placeholder="Dan"
@@ -90,6 +108,7 @@ export default class Form extends React.Component {
         message={!fields.name ? errors.empty : errors.name}
         />}
         <FormInput 
+        value={fields.lastName}
         field="lastName"
         fieldLabel="Фамилия"
         placeholder="Abramov"
@@ -101,6 +120,7 @@ export default class Form extends React.Component {
         message={!fields.lastName ? errors.empty : errors.lastName}
         />}
         <FormInput 
+        value={fields.dateOfBirth}
         field="dateOfBirth"
         fieldLabel="Дата рождения"
         placeholder="DD.MM.YYYY"
@@ -112,6 +132,7 @@ export default class Form extends React.Component {
         message={!fields.dateOfBirth ? errors.empty : errors.dateOfBirth}
         />}
         <FormInput 
+        value={fields.phone}
         field="phone"
         fieldLabel="Телефон"
         placeholder="7-7777-77-77"
@@ -124,6 +145,7 @@ export default class Form extends React.Component {
         message={!fields.phone ? errors.empty : errors.phone}
         />}
         <FormInput 
+        value={fields.website}
         field="website"
         fieldLabel="Сайт"
         placeholder="https://overreacted.io"
@@ -135,6 +157,7 @@ export default class Form extends React.Component {
         message={!fields.website ? errors.empty : errors.website}
         />}
         <FormTextArea
+        value={fields.desc}
         field="desc"
         fieldLabel="О себе" 
         placeholder="Describe yourself here"
@@ -151,6 +174,7 @@ export default class Form extends React.Component {
         limit={600}
         />}
         <FormTextArea
+        value={fields.techStack}
         field="techStack"
         fieldLabel="Стек технологий" 
         placeholder="JavaScript, React, Redux"
@@ -167,6 +191,7 @@ export default class Form extends React.Component {
         limit={600}
         />}
         <FormTextArea
+        value={fields.projectDesc}
         field="projectDesc"
         fieldLabel="Описание последнего проекта" 
         placeholder="Short and sweet, please"
@@ -186,6 +211,7 @@ export default class Form extends React.Component {
         <div className="controls-block">
           <Button 
           buttonName="ОТМЕНА"
+          onClick={(e) => this.clearForm(e)}
           />
           <Button 
           buttonName="СОХРАНИТЬ"
